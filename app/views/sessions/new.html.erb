@@ -1,0 +1,28 @@
+<% provide(:title, "Sign in") %>
+<h3>Introduce yourself:</h3>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: signin_path) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control'%>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %> <span>Remember me on this computer</span>
+         <!--   <label for="session_remember_me" >s</label>
+            <input type="checkbox" checked data-toggle="switch" name="session[remember_me]" data-on-color="info" id="session_remember_me" value="1"/>
+-->
+<%end %>
+
+        <div class="button1" style="margin-top: 15px; ">
+        <%= f.submit "Sign in", class:"btn btn-embossed btn-info" %>
+        </div>
+        <%= link_to " Newbie? Sign up now!", signup_path,  style:"margin: 20px; float: right; " %>
+    <% end %>
+
+
+  </div>
+</div>

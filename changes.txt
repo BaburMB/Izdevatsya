@@ -1,0 +1,11 @@
+Babur[07-may-2015] commit: "finished chapter 6"
+    * added email verification code into app/models/users.rb
+    * проверка на уникальность емаила в app/models/users.rb
+    * добавил gem 'bcrypt',               '3.1.9' в Гемфайл, затем сделал $ bundle install
+    source 'http://rubygems.org'
+     * закончил 6й чаптер - добавил пароли. Теперь пока будет регаться  через $ rails console командой :
+            irb:> User.create(name: "имя", email:"слово@слово.слово", password: "пароль1", password_confirmation: "пароль1")
+Babur[08-may-2015] commit: "added header"
+       * Среда дебаггинга под каждой страницей в application.html.erb
+       * Добавил _header.html.erb с рабочими ссылками
+      * еще не дошел до граватара в чаптер 7

@@ -1,0 +1,86 @@
+
+<nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+
+  <div class="navbar-header">
+
+    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+
+      <span class="sr-only">Toggle navigation</span>
+
+      <span class="icon-bar"></span>
+
+      <span class="icon-bar"></span>
+
+      <span class="icon-bar"></span>
+
+    </button>
+
+    <%= link_to "#hashtagkg", root_path, class:"navbar-brand"%>
+  </div>
+
+  <!-- Collection of nav links, forms, and other content for toggling -->
+
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+
+    <ul class="nav navbar-nav">
+
+      <li><%= link_to "Home", root_path%></li>
+      <li><%= link_to "Blog", posts_path%></li>
+      <li><%= link_to "Review",review_path%></a></li>
+      <li><%= link_to "About", about_path %></li>
+      
+    </ul>
+        
+        
+      <%# Links for logged-in users%>
+      <% if signed_in?%>
+        <ul class="nav navbar-nav">
+      <li><%= link_to "Users", users_path%></li>
+      
+            </ul>
+             <ul class="nav navbar-nav navbar-right">
+           <li><%= link_to "New post", new_post_path %></li>
+           <li>
+           <%= link_to  'Profile' ,current_user %>
+         </li>
+
+          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+          <li>
+            <%= link_to "Sign out", signout_path, method: "delete" ,class:"btn btn-danger" %>
+          </li>
+             </ul>
+
+      <% else %>
+          <%# # Links for non-logged-in-users %>
+          <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign in", signin_path , class:"btn btn-success"%></li>
+          </ul>
+      <% end %>
+
+
+<!--
+    <form role="search" class="navbar-form navbar-right">
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" placeholder="Search" class="form-control">
+          <span class="input-group-btn"> <button type="button">go!</button></span>
+        </div>
+      </div>
+    </form>
+-->
+    <form role="search" class="navbar-form navbar-right">
+    <div class="input-group">
+      <input type="text" class="form-control">
+              <span class="input-group-btn" >
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+
+    </div>
+</form>
+  </div>
+
+</nav>
+
